@@ -1,0 +1,345 @@
+/* General styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+video.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the screen without stretching */
+  z-index: -1; /* Places the video behind other content */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Darken with transparency */
+  z-index: 0; /* Between video and content */
+}
+
+/* Content section styling */
+.content {
+  position: relative;
+  z-index: 1; /* Above video */
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+  padding: 20px;
+  width: 100%;
+  max-height: 100%;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto; /* Allows scrolling if content exceeds screen */
+}
+
+/* Header styling */
+.header {
+  display: flex;
+  justify-content: center; /* Centers the entire header */
+  gap: 5px;
+  align-items: flex-start; /* Aligns content to the top */
+  margin: 40px 70px; /* Centers the header section */
+  flex-wrap: wrap; /* Allows items to wrap if there's not enough space */
+  margin-bottom: 40px;
+}
+
+/* Profile photo styling */
+.profile-photo {
+  flex: 1 1 0px; /* Ensures it takes up space but doesn't force large width */
+  text-align: center;
+  font-size: 0.75rem;
+  margin-bottom: 5px; /* Further reduced margin bottom */
+  padding-bottom: 5px; /* Reduced padding to pull it closer */
+}
+
+.photo {
+  border-radius: 50%;
+  width: 160px;
+  margin-top: 35px;
+}
+
+/* Description styling */
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 10px;
+  text-align: center;
+  word-wrap: break-word; /* Ensures long words break */
+  overflow-wrap: break-word;
+  max-width: 90%; /* Ensures it doesn't exceed the parent container */
+  margin: 0 auto; /* Centers the text container */
+}
+
+/* Typewriter effect for text */
+.typewriter {
+  display: block;
+  white-space: normal; /* Wraps text normally */
+  width: 100%; /* Ensures it fills available space */
+  overflow: visible;
+}
+
+.icon img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  border-radius: 10px;
+}
+
+.icon:hover img {
+  transform: scale(1.2);
+}
+
+/* Social media icons container */
+.social-icons {
+    display: grid;
+    grid-template-columns: repeat(5, auto); /* Adjusted for five icons per row */
+    justify-content: center;
+    row-gap: 40px; /* Space between rows */
+    column-gap: 50px; /* Adjust spacing if needed */
+    margin-top: 15%;
+   
+}
+
+
+/* Popup modal styling */
+
+.popup-content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+ 
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: fit-content;
+  text-align: center;
+}
+
+.popup-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+#popup {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  /* Center the popup */
+  width: fit-content;
+  height: auto;
+  background: rgba(212, 209, 209, 0.9); /* Light background with slight transparency */
+  z-index: 2;
+  padding: 5px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center the content inside */
+}
+#popup.move-to-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align everything to the center */
+  justify-content: space-around;
+}
+
+#platform-links {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  align-items: center; 
+  justify-content: center;
+  gap: 10px; /* Space between rows */
+  width: 100%; /* Ensure it spans the popup width */
+  padding: 3px; /* Padding for aesthetics */
+ 
+}
+
+.platform-row {
+  display: flex;
+  align-items: center; /* Align logo and link vertically */
+  gap: 10px; /* Space between logo and link */
+  justify-content: center; /* Center each row */
+  width: 100%; /* Ensure it spans popup width */
+  border: 4px solid #ccc;
+  border-radius: 20px;
+  margin-bottom: 5px;
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 5px;
+ 
+}
+.platform-row:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.platform-row img {
+  width: 30px; /* Smaller size for popup icons */
+  height: 30px;
+  border-radius: 4px; /* Optional: Slightly rounded edges */
+  
+}
+
+.platform-row a {
+  text-decoration: none;
+  color: black; /* Ensure it's readable */
+  font-size: 1.2rem; /* Slightly smaller font for neatness */
+  font-weight: normal;
+}
+
+.platform-row a:hover {
+  color: gray; /* Change color on hover */
+  text-decoration: underline; /* Optional: Emphasize on hover */
+  
+}
+
+#telegram #linked-in{
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 768px) {
+  #popup {
+    width: 30%; /* Ensure it fits on small screens */
+    max-width: 90%; /* No unnecessary overflow */
+    padding: 15px; /* Reduce padding for small screens */
+    font-size: 1rem; /* Adjust font size */
+    top:40%;
+    left:40%
+  }
+
+  .platform-row {
+    padding: 10px; /* Slightly larger padding for ease of use */
+    font-size: 0.65rem; /* Reduce font size */
+  }
+}
+
+
+
+/* Animation for popup */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* White links inside the popup */
+.link-effect {
+  color: black;
+  border: #e2dddd solid 2px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Blur background when popup is active */
+.content .blur {
+  filter: blur(5px);
+}
+
+/* Ensure typewriter paragraphs don't get cut off */
+.typewriter {
+  display: inline-block;
+  white-space: normal;
+  overflow: visible;
+  width: 100%; /* Prevents shrinking */
+}
+
+/* Mobile-first adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stacks profile photo and description */
+    align-items: center;
+    text-align: center;
+    gap: 20px; /* Adds spacing between items */
+    margin: 0 21px;
+  }
+
+  .profile-photo, .description {
+    text-align: left; /* Centers text */
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .profile-photo {
+    margin-bottom: 5px; /* Reduced margin bottom */
+    text-align: center;
+  }
+
+  .description {
+    margin-top: 0; /* No extra margin in mobile */
+    font-size: 0.9rem;
+    margin: 0 -11px;
+    margin-bottom: -65px; /* Reduced negative margin for closer alignment */
+    padding-top: 0; /* Reduced padding to bring it closer */
+  }
+
+  .content {
+    margin: 0px -11px;
+  }
+
+  /* Adjust icon size for smaller screens */
+  .icon img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Adjustments for even smaller screens */
+@media (max-width: 500px) {
+  .header {
+    top: 30%;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 100px;
+  }
+
+  /* Make icons smaller for very small screens */
+  .icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Content margin for very small screens */
+  .content {
+    margin: 0 -11px;
+    font-size: 0.75rem; /* Smaller text */
+  }
+
+  /* Change social icons layout to 3 per row */
+  .social-icons {
+    gap: 40px; /* Smaller gap */
+    grid-template-columns: repeat(3, auto);
+  }
+  .icon:last-child {
+    grid-column: 2 / 3; /* Force the last icon to the center column */
+    justify-self: center; /* Align it in the center */
+}
+  #popup{
+    width: fit-content;
+  }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video class="video-background" autoplay muted loop>
+        <source src="./background-vido.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="header">
+            <div class="profile-photo">
+                <img src="./DALL·E 2024-09-28 01.28.37 - Create an anime-style character inspired by the person in the provided.webp" alt="Profile Photo" class="photo">
+                <h2>Kanishk Singh</h2>
+            </div>
+            <div class="description">
+                <p class="typewriter" id="head-content" data-text="Hello, everybody! My name is Kanishk Singh, and I am currently pursuing a Bachelor of Engineering in Information Technology at Chandigarh University."></p>
+                <p class="typewriter" id="desc" data-text="I'm a dynamic Software Developer with strong expertise in Data Structures & Algorithms, proficient in multiple programming languages like C, Java, and Python. With hands-on experience in front-end technologies (HTML, CSS, JavaScript) and database management (SQL, MongoDB), I bring a full-stack development approach to my projects. Alongside coding, I create gaming content as a YouTuber, engage audiences as an Influencer, and explore my artistic side through music production. This blend of technical skills and creative outlets drives my passion for innovation and entertainment."></p>
+            </div>
+        </div>
+        
+        
+        <!-- Social Media Icons Section -->
+        <div class="social-icons">
+            <div class="icon" data-platform="Instagram">
+                <img src="path/to/instagram.png" alt="Instagram">
+            </div>
+            <div class="icon" id="linked-in" data-platform="LinkedIn">
+                <img src="path/to/linkedIn.png" alt="LinkedIn">
+            </div>
+            <div class="icon" data-platform="Twitter">
+                <img src="path/to/twitter.png" alt="Twitter">
+            </div>
+            
+           
+            <div class="icon" data-platform="LeetCode">
+                <img src="path/to/leetcode.png" alt="LeetCode">
+            </div>
+            <div class="icon" data-platform="Facebook">
+                <img src="path/to/facebook.jpg" alt="Facebook">
+            </div>
+            
+            <div class="icon" id="telegram" data-platform="Telegram">
+                <img src="path/to/telegram.png" alt="Telegram">
+            </div>
+            <div class="icon" data-platform="GitHub">
+                <img src="path/to/github_logo.png" alt="GitHub">
+            </div>
+            <div class="icon" data-platform="Discord">
+                <img src="path/to/discord.png" alt="Discord">
+            </div>
+           
+            <div class="icon" data-platform="Youtube">
+                <img src="path/to/youtube.jpg" alt="Services">
+            </div>
+            <div class="icon" data-platform="Services">
+                <img src="path/to/online-service.png" alt="Services">
+            </div>
+        </div>
+        
+        <!-- Popup Modal -->
+        
+        <div id="popup" class="popup-content">
+            <!-- <span class="close">&times;</span> -->
+          
+            <div id="platform-links"></div> <!-- Container for multiple profile links -->
+        </div>
+
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
